@@ -1,0 +1,13 @@
+<div class="login-container">
+   <form [formGroup]="form" (ngSubmit)="onLogin()">
+     <img ngSrc="assets/img.png" alt="" height="180" width="230"/>
+     <div>
+        <input type="text" placeholder="Username" formControlName="userName">
+      </div>
+      <div>
+        <input type="password" placeholder="Password" id="password"  formControlName="password">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Continue</button>
+    </form>
+</div>
+

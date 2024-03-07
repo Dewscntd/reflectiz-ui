@@ -1,0 +1,33 @@
+
+<header *ngIf="isAuth">
+      <nav>
+        <mat-toolbar>
+          <img ngSrc="assets/img.png" alt="" height="60" width="100"/>
+          <span class="example-spacer"></span>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon fontIcon="account_circle"></mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onLogout()">Logout</button>
+          </mat-menu>
+        </mat-toolbar>
+      </nav>
+    </header>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav *ngIf="isAuth"  mode="side" opened="true" class="sidenav">
+      <div class="actions">
+          <button mat-icon-button routerLink="/alerts">
+            <mat-icon>add_alert</mat-icon>
+          </button>
+          <button mat-icon-button  routerLink="/history">
+            <mat-icon>history</mat-icon>
+          </button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
