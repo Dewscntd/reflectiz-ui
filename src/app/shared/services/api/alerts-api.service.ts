@@ -9,7 +9,7 @@ import { AlertRes } from "../../../features/alerts/domain/alerts";
 export class AlertsApiService {
   constructor(private http: HttpClient)  {}
   pullAlerts(): Observable<AlertRes> {
-    return this.http.get<AlertRes>('http://localhost:3000/alerts', {headers: {
+    return this.http.get<AlertRes>('https://reflectiz-be.onrender.com/alerts', {headers: {
       }});
   }
 }
