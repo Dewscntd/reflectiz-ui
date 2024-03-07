@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { AlertsFacade } from "./domain/alerts.facade.service";
 import { ALERTS_SORT_ACTIONS, AlertSort, SortAction } from "./domain/alerts.consts";
-import { AlertsApiService } from "../../shared/services/api/alerts-api.service";
 
 @Component({
   selector: 'app-alerts',
@@ -19,7 +18,7 @@ export class AlertsComponent implements OnInit {
   constructor(private alertsFacade: AlertsFacade) { }
 
   ngOnInit(): void {
-    this.alertsFacade.startPulling(15000);
+    this.alertsFacade.startPulling(1500);
   }
 
   onSortBy(action: SortAction) {
@@ -31,7 +30,6 @@ export class AlertsComponent implements OnInit {
       case AlertSort.date:
         return this.alertsFacade.sortByDate();
     }
-
   }
 
   onAlertDismissed(id: string) {

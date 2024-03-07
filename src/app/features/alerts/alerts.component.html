@@ -15,12 +15,16 @@
 <div *ngIf="(alerts$ | async)?.length !== 0; then alertList else empty" class="cards-container"></div>
 
 <ng-template #alertList>
-  <app-alert *ngFor="let alert of alerts$ | async" [alert]="alert" (alertDismissed)="onAlertDismissed($event)"></app-alert>
-  <mat-divider></mat-divider>
+  <div class="alerts-container">
+    <div class="alert-item">
+      <app-alert *ngFor="let alert of alerts$ | async" [alert]="alert" (alertDismissed)="onAlertDismissed($event)"></app-alert>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
 </ng-template>
 <ng-template #empty>
   <div class="empty-list-container">
-    <div class="empty-list-icon">&#x1F4C3;</div> <!-- Example emoji as an icon -->
+    <div class="empty-list-icon">&#x1F4C3;</div>
     <div class="empty-list-message">No items found.</div>
   </div>
 </ng-template>
