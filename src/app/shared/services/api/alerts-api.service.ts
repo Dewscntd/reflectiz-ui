@@ -9,7 +9,6 @@ import { AlertRes } from "../../../features/alerts/domain/alerts";
 export class AlertsApiService {
   constructor(private http: HttpClient)  {}
   pullAlerts(): Observable<AlertRes> {
-    return this.http.get<AlertRes>('https://reflectiz-be.onrender.com/alerts', {headers: {
-      }});
+    return this.http.get<AlertRes>('https://reflectiz-be.onrender.com/alerts');
   }
 }
