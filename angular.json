@@ -98,7 +98,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "scripts": ["ng deploy --base-href=https://dewscntd.github.io/reflectiz-ui"]
+          }
         }
       }
     }
