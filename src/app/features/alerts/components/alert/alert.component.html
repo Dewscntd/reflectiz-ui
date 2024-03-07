@@ -1,0 +1,27 @@
+<div class="alert" [class.disabled-content]="alert.isDismissed">
+  <div class="alert-body">
+    <h3 class="alert-title">{{alert.name}}</h3>
+    <section>
+      <p class="alert-text">{{alert.description}}</p>
+      <p>
+        <span class="dismiss-btn" (click)="onDismiss()">Dismiss</span>
+      </p>
+    </section>
+    <footer>
+      <span>
+        <span class="inline-data">
+          <label>Severity</label>
+          <span [style.background-color]="alert.severity | severityColor" class="circle"> {{alert.severity }}</span>
+        </span>
+        <span class="inline-data">
+          <label>Date</label> <span>{{ alert.date | date}}</span>
+        </span>
+        <span class="inline-data">
+          <label>Source</label><span>{{ alert.source }}</span>
+        </span>
+      </span>
+    </footer>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
